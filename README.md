@@ -13,6 +13,8 @@ Even if it detects any one line with it's signified color the bot will behave no
 https://www.youtube.com/watch?v=-YWwjlGPxko
 
 ## Challenges:
+If the yellow line is detected as white line due to poor lightning conditions the bot will face problem while taking a turn.
+
 
 ## References:
 https://emanual.robotis.com/docs/en/platform/turtlebot3/autonomous_driving/
