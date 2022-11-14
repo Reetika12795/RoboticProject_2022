@@ -14,7 +14,7 @@ https://www.youtube.com/watch?v=-YWwjlGPxko
 
 ## Challenges:
 If the yellow line is detected as white line due to poor lightning conditions the bot will face problems while taking a turn.
-![alt text](https://github.com/Reetika12795/RoboticProject_2022/blob/main/1668436334462.jpg)
+![alt text](https://github.com/Reetika12795/RoboticProject_2022/blob/main/Screenshot%20from%202022-11-14%2016-16-17.png)
 
 
 ## References:
