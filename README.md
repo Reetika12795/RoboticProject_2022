@@ -3,10 +3,13 @@ Calibration of pi camera.\
 Get the image from camera and get the undistorted region of interest.
 
 
-## Base architecture of our model
-This project primarily uses two main steps , one for the detection of the line and one for the navigation of the robot to do so. The detection part first and foremost obtains an image from the turtlebot in the real environment , performs color thresholding , masking and centroid detection to communicate the required direction for the robot to move in . The direction is determined based on the position of the centroid of the detected lines with respect to the turtlebot. The direction published by the detection class is used by the navigation class to publish velocity commands to the Turtlebot and successfully follow the line throughout the environment.
+## Base architecture of the model:
+The bot will follow the path with detecting yellow line on it's left and white line on it's right in particular.\
+The bot will follow the mean path between these two detected lines.\
+Even if it detects any one line with it's signified color the bot will behave normal.\
+![alt text](https://github.com/Reetika12795/RoboticProject_2022/blob/main/1668436334462.jpg)
 
-![alt text](https://github.com/sudrag/line_follower_turtlebot/blob/master/UML/revised/ActivityDiagram_revised.png?raw=true)
+## Challenges:
 
 ## References:
-https://github.com/sudrag/line_follower_turtlebot
+https://emanual.robotis.com/docs/en/platform/turtlebot3/autonomous_driving/
