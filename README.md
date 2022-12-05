@@ -10,7 +10,8 @@ Even if it detects any one line with it's associated color the bot will behave n
 ![alt text](https://github.com/Reetika12795/RoboticProject_2022/blob/main/1668436334462.jpg)
 
 ## Demo Video:
-https://www.youtube.com/watch?v=-YWwjlGPxko
+https://www.youtube.com/watch?v=-YWwjlGPxko \
+https://youtu.be/e2C2EWr9nHM
 
 ## Challenges:
 If the yellow line is detected as white line due to poor lightning conditions the bot will face problems while taking a turn.
