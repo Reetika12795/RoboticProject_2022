@@ -1,6 +1,33 @@
 ## DEMO VIDEO ATTACH HERE 
 ## first page of project
 
+<p align="center">  
+   <img src = "ub.png" width = 200>
+</p >
+
+# <p align="center">University of Burgundy
+</p > 
+
+# <p align="center">Master of Computer vision and Robotics</p >   
+<p align="center">  
+   <img src = "vibot.png" width = 80>
+</p >
+
+# <p align="center">Robotics Project</p> 
+
+## <p align="center">Under the guidance of:</p > 
+
+<p align="center"> Joaquin RODRIGUEZ </p >     
+<p align="center"> Raphael DUVERNE </p >   
+<p align="center"> Renato MARTINS </p >   
+ 
+
+## <p align="center">Team Members:</p >
+
+<p align="center">REETIKA GAUTAM</p>
+<p align="center">SEIKH KEBAB</p>
+
+
 ## Aim of the project
 The bot will follow the path with detecting yellow line on it's left and white line on it's right in particular using autorace package.\
 The bot will follow the mean path between these two detected lines.\
