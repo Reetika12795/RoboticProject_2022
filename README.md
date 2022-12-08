@@ -3,6 +3,8 @@ Calibration of pi camera.\
 Get the image from camera and get the undistorted region of interest.
 
 
+Hello!
+
 ## Base architecture of the model:
 The bot will follow the path with detecting yellow line on it's left and white line on it's right in particular using autorace package.\
 The bot will follow the mean path between these two detected lines.\
