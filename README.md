@@ -1,9 +1,21 @@
+## DEMO VIDEO ATTACH HERE 
+## first page of project
+## Introduction(ABout tutbot3,type of camera used,robot modules)
+## Aim of the project
+## prerequisites for the project
+## Base architecture of the model(camera caliberation module -- intrinsic and extrinsic(reason), Set HSV value for detect lane, call control lane for path averaging)
+## Implementation of code and the steps to execute
+## Flochart of the architecture
+## Conclusion
+## References
+
+
+
+
+
 ## Earlier steps:
 Calibration of pi camera.\
 Get the image from camera and get the undistorted region of interest.
-
-
-Hello!
 
 ## Base architecture of the model:
 The bot will follow the path with detecting yellow line on it's left and white line on it's right in particular using autorace package.\
