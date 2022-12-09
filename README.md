@@ -56,6 +56,24 @@ The robot has to autonomously drive between the two colored detected lines.
 Camera calibration is one of the most important steps in order to run the turtle bot properly on the track. For camera calibration, we do two calibrations for intrinsic paramemters and extrinsic parameters. 
 #Intrinsic parameters - Intrinsic parameters are the parameters for the optical centre and the focal length of the camera. 
 
+Camera calibration is one of the most important steps in order to run the turtle bot properly on the track. For camera calibration, we do two calibrations for intrinsic paramemters and extrinsic parameters. \
+
+**Intrinsic parameters** - Intrinsic parameters are the parameters for the optical centre and the focal length of the camera. 
+
+![image](https://user-images.githubusercontent.com/116564367/206685142-f2a86333-1945-40d2-8d00-081c301f2d23.png)
+
+
+A checker board pattern is used for the calibration of the intrinsic parameters.
+
+![alt text](https://github.com/Reetika12795/RoboticProject_2022/blob/main/images/camera-calibration_tb3.webp)
+
+**Extrinsic parameters** - Extrinsic parameters are the parameters for the surroundings of the camera relative to rotation and translation. It helps to view the world objects from camera perspective.\
+
+**HSV space to detect lane** - For detecting the lanes, HSV values have been used. The bot is detecting the yellow line on the left and white line on the right with the HSV values of yellow and white respectively detected by the realtime image received from the turtlebot camera. 
+P.S. - HSV values are sensitive to lighting conditions. But we have tried some image processing techniques to resolve it.
+
+**Control lane** - The motive of the project is to move the turtlebot keeping it between the lines. After detection of the proper line on proper side, The robot should calculate he average of the lines and keep moving by following the average line. \In case of un availability of a line, as long as the other line is being detected, the robot should move in its desired path. To do that, the algorithm makes a line that should be the average line and creates a line by adding a distance from the detected line os that the bot can move swiftly.
+
 
 
 ## Implementation of code and the steps to execute
@@ -105,10 +123,33 @@ Once the values are updated, Kill the node and launch it in action mode with the
 ```
 $ roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch mode:=action
 ```
+### Detecting the HSV lane from autorace:
+Launch the following command to detect the HSV values of yellow and white for the projected image from the node /camera/image_projected_compensated
+```
+$ roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=calibration
+$ rosrun rqt_reconfigure rqt_reconfigure
+```
+Open lane.yaml file located in turtlebot3_autorace_detect/param/lane/ and update the values where you can distinguish the yellow and white lane properly.\
+file:///home/masters/Pictures/Screenshot%20from%202022-11-14%2011-34-46.png![image](https://user-images.githubusercontent.com/33001160/206697797-39ef1844-9b3f-4a39-b8db-975a3edbe762.png)
 
+<< attach photo of both the lanes like we are getting in our model >> \
+<< attach the values we set in lane.yaml for the hue values>> \
+Once the values are updated, Kill the node and launch it in action mode with the following command on the *Remote PC* 
+```
+$ roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=action
+```
 
-
-
+### Since there exists ambiguity while distinguishing the yellow and white we try to equalize the intensity of the image received from autorace detect lane package.
+launch this file which subscribes to /camera/image_projected_compensated node and publish it's data on 'eql_img' node
+```
+rosrun turtlebot3_autorace_camera hist_equalize.py
+```
+###For the final step we launch the control node of the turtlebot that allows it to stay between the two detected lines :
+launch the command on your 'remote PC' 
+```
+roslaunch turtlebot3_autorace_driving turtlebot3_autorace_control_lane.launch
+```
+Volla!! your robot will start to floow the path between the yellow and white lines
 
 ## Flochart of the architecture
 ## Conclusion
