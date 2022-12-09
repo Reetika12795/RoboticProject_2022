@@ -1,4 +1,6 @@
 ## DEMO VIDEO ATTACH HERE 
+
+[![Watch the video](https://img.youtube.com/vi/HFumbUllFtc/maxresdefault.jpg)](https://youtu.be/HFumbUllFtc)
 ## first page of project
 
 <p align="center">  
@@ -25,7 +27,7 @@
 ## <p align="center">Team Members:</p >
 
 <p align="center">REETIKA GAUTAM</p>
-<p align="center">SEIKH KEBAB</p>
+<p align="center">SEIKH MOHAMMED BASHARAT MONES</p>
 
 
 ## Aim of the project
