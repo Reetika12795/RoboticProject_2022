@@ -45,16 +45,31 @@ The type of robot we program in our project is (TurtleBot3--![image](https://use
 For Atonomous driving the camera module that we use for navigation is the raspi cam node which needs caliberation of both intrinsic and extrinsic parameters as to remove the effect of distortion to the images.
 
 
-## prerequisites for the project
+## Prerequisites for the project
 The Robot has to follow the lanes with yellow on the left and white on the right and the distance between the lane remains constant throught most part of the track(even in turns and in the tunnel). \
 The robot has to autonomously drive between the two colored detected lines.
 
+## Running the package
+First, the roscore is to be launched in a terminal.
 
+```shell
+roscore 
+```
+Next, we need to move for the camera calibration part.
 
 ## Base architecture of the model(camera caliberation module -- intrinsic and extrinsic(reason), Set HSV value for detect lane, call control lane for path averaging)
 
-Camera calibration is one of the most important steps in order to run the turtle bot properly on the track. For camera calibration, we do two calibrations for intrinsic paramemters and extrinsic parameters. 
-#Intrinsic parameters - Intrinsic parameters are the parameters for the optical centre and the focal length of the camera. 
+Camera calibration is one of the most important steps in order to run the turtle bot properly on the track. For camera calibration, we do two calibrations for intrinsic paramemters and extrinsic parameters. \
+**Intrinsic parameters** - Intrinsic parameters are the parameters for the optical centre and the focal length of the camera. 
+
+![image](https://user-images.githubusercontent.com/116564367/206685142-f2a86333-1945-40d2-8d00-081c301f2d23.png)
+
+
+A checker board pattern is used for the calibration of the intrinsic parameters. 
+![alt text](https://github.com/Reetika12795/RoboticProject_2022/blob/main/images/camera-calibration_tb3.webp)
+
+**Extrinsic parameters** - Extrinsic parameters are the parameters for the surroundings of the camera relative to rotation and translation.
+
 ## Implementation of code and the steps to execute
 ## Flochart of the architecture
 ## Conclusion
