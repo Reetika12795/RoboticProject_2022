@@ -3,7 +3,6 @@
 
 https://user-images.githubusercontent.com/116564367/206717401-5cf35e06-8680-4d73-9c17-cc9b7e7b7c8a.mp4
 
-## first page of project
 
 <p align="center">  
    <img src = "ub.png" width = 200>
