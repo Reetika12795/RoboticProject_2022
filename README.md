@@ -1,4 +1,4 @@
-## DEMO VIDEO ATTACH HERE 
+## Robotics Project MSCV
 
 
 https://user-images.githubusercontent.com/116564367/206717401-5cf35e06-8680-4d73-9c17-cc9b7e7b7c8a.mp4
@@ -94,7 +94,15 @@ P.S. - HSV values are sensitive to lighting conditions. But we have tried some i
 
 **Control lane** - The motive of the project is to move the turtlebot keeping it between the lines. After detection of the proper line on proper side, The robot should calculate he average of the lines and keep moving by following the average line. \In case of un availability of a line, as long as the other line is being detected, the robot should move in its desired path. To do that, the algorithm makes a line that should be the average line and creates a line by adding a distance from the detected line os that the bot can move swiftly.
 
+![merge_from_ofoct](https://user-images.githubusercontent.com/116564367/206718716-47df66f0-b7ba-44fc-8837-f028e299b077.png)
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (1) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (2) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (3) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (4)
 
+
+Above in images,
+Image(1) - Both the lines left(yellow) and right(white) are visible and the average line(yellow in the middle) is created properly.\
+Image(2) - Left line is detected properly and right line is not in the view but still we have the average line.\
+Image(3) - Right line is detected properly and left line is not present in the view but the average line is being viewed properly.\
+Image(4) - Sometimes both the lines are detected on the lane but still the algorithm gets confused for to the poor image reception due to lighting conditions.
 
 ## Implementation of code and the steps to execute
 
