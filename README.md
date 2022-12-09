@@ -1,3 +1,4 @@
+## DEMO VIDEO ATTACH HERE 
 ## Robotics Project MSCV
 
 
@@ -29,6 +30,7 @@ https://user-images.githubusercontent.com/116564367/206717401-5cf35e06-8680-4d73
 ## <p align="center">Team Members:</p >
 
 <p align="center">REETIKA GAUTAM</p>
+<p align="center">SEIKH KEBAB</p>
 <p align="center">SEIKH MOHAMMED BASHARAT MONES</p>
 
 
@@ -57,6 +59,8 @@ The robot has to autonomously drive between the two colored detected lines.
 
 ## Base architecture of the model(camera caliberation module -- intrinsic and extrinsic(reason), Set HSV value for detect lane, call control lane for path averaging)
 
+Camera calibration is one of the most important steps in order to run the turtle bot properly on the track. For camera calibration, we do two calibrations for intrinsic paramemters and extrinsic parameters. 
+#Intrinsic parameters - Intrinsic parameters are the parameters for the optical centre and the focal length of the camera. 
 
 Camera calibration is one of the most important steps in order to run the turtle bot properly on the track. For camera calibration, we do two calibrations for intrinsic paramemters and extrinsic parameters. \
 
