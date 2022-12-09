@@ -49,13 +49,6 @@ For Atonomous driving the camera module that we use for navigation is the raspi 
 The Robot has to follow the lanes with yellow on the left and white on the right and the distance between the lane remains constant throught most part of the track(even in turns and in the tunnel). \
 The robot has to autonomously drive between the two colored detected lines.
 
-## Running the package
-First, the roscore is to be launched in a terminal.
-
-```shell
-roscore 
-```
-Next, we need to move for the camera calibration part.
 
 ## Base architecture of the model(camera caliberation module -- intrinsic and extrinsic(reason), Set HSV value for detect lane, call control lane for path averaging)
 
