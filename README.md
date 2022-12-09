@@ -1,6 +1,8 @@
 ## DEMO VIDEO ATTACH HERE 
 
-[![Watch the video](https://img.youtube.com/vi/HFumbUllFtc/maxresdefault.jpg)](https://youtu.be/HFumbUllFtc)
+
+https://user-images.githubusercontent.com/116564367/206717401-5cf35e06-8680-4d73-9c17-cc9b7e7b7c8a.mp4
+
 ## first page of project
 
 <p align="center">  
