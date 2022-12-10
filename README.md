@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/116564367/206747824-566d8dd0-aebe-415f
 
 
 <p align="center">  
-   <img src = "ub.png" width = 200>
+   <img src = "images/ub.png" width = 200>
 </p >
 
 # <p align="center">University of Burgundy
@@ -18,7 +18,7 @@ https://user-images.githubusercontent.com/116564367/206747824-566d8dd0-aebe-415f
 
 # <p align="center">Master of Computer vision and Robotics</p >   
 <p align="center">  
-   <img src = "vibot.png" width = 80>
+   <img src = "images/vibot.png" width = 80>
 </p >
 
 # <p align="center">Robotics Project</p> 
@@ -34,6 +34,47 @@ https://user-images.githubusercontent.com/116564367/206747824-566d8dd0-aebe-415f
 
 <p align="center">REETIKA GAUTAM</p>
 <p align="center">SEIKH MOHAMMED BASHARAT MONES</p>
+
+# TABLES OF CONTENTS:
+
+
+ 1. [ Aim of the project](https://github.com/Reetika12795/RoboticProject_2022#aim-of-the-project)
+
+ 2. [Introduction](https://github.com/Reetika12795/RoboticProject_2022#introductionabout-tutbot3type-of-camera-usedrobot-modules)
+
+ 3. [prerequisites for the project](https://github.com/Reetika12795/RoboticProject_2022#prerequisites-for-the-project)
+ 
+ 4. [Base architecture of the model](https://github.com/Reetika12795/RoboticProject_2022#base-architecture-of-the-modelcamera-caliberation-module----intrinsic-and-extrinsicreason-set-hsv-value-for-detect-lane-call-control-lane-for-path-averaging)
+   1) **Extrinsic parameters**
+   2) **HSV space to detect lane**
+   3) **Control lane**
+   4) **Intrinsic parameters**
+   
+ 5. [Implementation of code and the steps to execute](https://github.com/Reetika12795/RoboticProject_2022#implementation-of-code-and-the-steps-to-execute)
+
+    * [Simulation to test the control system](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#control-system)
+
+ 6. [Integration of ROS ](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#integration-of-ros)
+
+    1) [ What is ROS: ](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#1-what-is-ros)
+
+    2) [ What is the publisher and Subscriber](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#2-what-is-the-publisher-and-subscriber)
+
+    3) [Launch the Robot](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#3-launch-the-robot)
+
+    4) [Launch the Camera](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#4-launch-the-camera)
+
+ 7. [Obstacle avoidance](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#obstacle-avoidance)
+
+    1) [Obstacle detection](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#1-obstacle-detection)
+
+    2) [The algorithm developed](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#2-the-algorithm-developed)
+
+    3) [Similar RRT algorithm](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#3-similar-rrt-algorithm)
+
+ 8. [Conclusion](https://github.com/Reetika12795/RoboticProject_2022#conclusion)
+ 9. [Demo Video](https://github.com/Reetika12795/RoboticProject_2022#demo-video)
+ 10. [References](https://github.com/Reetika12795/RoboticProject_2022#references-1)
 
 
 ## Aim of the project
@@ -184,9 +225,8 @@ roslaunch turtlebot3_autorace_driving turtlebot3_autorace_control_lane.launch
 Volla!! your robot will start to floow the path between the yellow and white lines
 
 ## Flochart of the architecture
-## Conclusion
-## References
 
+## Conclusion
 
 ## Demo Video:
 https://www.youtube.com/watch?v=-YWwjlGPxko \
