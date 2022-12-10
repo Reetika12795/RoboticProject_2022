@@ -129,32 +129,32 @@ Image(4) - Sometimes both the lines are detected on the lane but still the algor
 
 * At very first we connect with Roscore to allow all the ROS nodes communications with each other.  
 launch roscore on the *Remote PC*.
-```
-$ roscore
+```bash
+roscore
 ```
 * launch the turtlebot3 bringup in the Single Borad Computer(*SBC*) this strats the turtlebot3_core Node and starts publishing,subscribing the information between the SBC and sensor,actuators. 
-```
-$ roslaunch turtlebot3_bringup turtlebot3_robot.launch
+```bash
+roslaunch turtlebot3_bringup turtlebot3_robot.launch
 ```
 
 This package does not come directly with a ros install, you might have to install it yourself either via apt.
 
-```
+```bash
 run sudo apt install ros-<your_distro>-turtlebot3-bringup
 ```
 Then just source /opt and run the command.
 
 
 * From turtlebot3_autorace_camera launch raspberry pi camera *SBC*:
-```
-$ roslaunch turtlebot3_autorace_camera raspberry_pi_camera_publish.launch
+```bash
+roslaunch turtlebot3_autorace_camera raspberry_pi_camera_publish.launch
 ```
 
 #### Intrinsic Calibration
 
 Launch the intrinsic camera caliberation file on *Remote PC* to caliberate the rospicam instrinsics:
-```
-$ roslaunch turtlebot3_autorace_camera intrinsic_camera_calibration.launch mode:=calibration
+```bash
+roslaunch turtlebot3_autorace_camera intrinsic_camera_calibration.launch mode:=calibration
 ```
 
 ![image](https://user-images.githubusercontent.com/33001160/206689960-72418e4d-793e-4443-810a-d4302e09ff07.png)
@@ -166,25 +166,25 @@ Once the image is in good contrast, sharper the parameter can be save in a **yam
 - Extrinsic Calibration which modifies the perspective of the image in the red trapezoid and helps in getting the ROI for out bot.
 Run this node on the *Remote PC* in caliberation mode .
 
-```
-$ roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch mode:=calibration
-$ rosrun rqt_reconfigure rqt_reconfigure
+```bash
+roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch mode:=calibration
+rosrun rqt_reconfigure rqt_reconfigure
 ```
 * Change the parameters of the file turtlebot3_autorace_2020/turtlebot3_autorace_camera/calibration/extrinsic_caliberation/projection.yaml
 ![image](https://user-images.githubusercontent.com/33001160/206691770-4edff0c8-1e96-4ea9-97d5-eebfdef1c0da.png)
 
 
 * Once the values are updated, Kill the node and launch it in action mode with the following command on the *Remote PC* 
-```
-$ roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch mode:=action
+```bash
+roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch mode:=action
 ```
 
 ### Detecting the HSV lane from autorace:
 
 * Launch the following command to detect the HSV values of yellow and white for the projected image from the node /camera/image_projected_compensated
-```
-$ roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=calibration
-$ rosrun rqt_reconfigure rqt_reconfigure
+```bash
+roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=calibration
+rosrun rqt_reconfigure rqt_reconfigure
 ```
 Open lane.yaml file located in turtlebot3_autorace_detect/param/lane/ and update the values where you can distinguish the yellow and white lane properly.
 
@@ -192,13 +192,13 @@ Open lane.yaml file located in turtlebot3_autorace_detect/param/lane/ and update
 
 
 Once the values are updated, Kill the node and launch it in action mode with the following command on the *Remote PC* 
-```
-$ roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=action
+```bash
+roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=action
 ```
 
 ***Since there exists ambiguity while distinguishing the yellow and white we try to equalize the intensity of the image received from autorace detect lane package.***
 launch this file which subscribes to /camera/image_projected_compensated node and publish it's data on 'eql_img' node
-```
+```bash
 rosrun turtlebot3_autorace_camera hist_equalize.py
 ```
 
@@ -207,7 +207,7 @@ rosrun turtlebot3_autorace_camera hist_equalize.py
 * For the final step we launch the control node of the turtlebot that allows it to stay between the two detected lines :
 
 launch the command on your 'remote PC' 
-```
+```bash
 roslaunch turtlebot3_autorace_driving turtlebot3_autorace_control_lane.launch
 ```
 Volla!! your robot will start to floow the path between the yellow and white lines
