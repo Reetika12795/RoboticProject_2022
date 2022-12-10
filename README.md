@@ -1,12 +1,6 @@
 ## Robotics Project MSCV
 
 
-<!-- https://user-images.githubusercontent.com/116564367/206717401-5cf35e06-8680-4d73-9c17-cc9b7e7b7c8a.mp4 -->
-
-
-https://user-images.githubusercontent.com/116564367/206747824-566d8dd0-aebe-415f-8e7d-0e47473c8338.mp4
-
-
 
 
 <p align="center">  
@@ -38,43 +32,29 @@ https://user-images.githubusercontent.com/116564367/206747824-566d8dd0-aebe-415f
 # TABLES OF CONTENTS:
 
 
- 1. [ Aim of the project](https://github.com/Reetika12795/RoboticProject_2022#aim-of-the-project)
+ 1. [Aim of the project](https://github.com/Reetika12795/RoboticProject_2022#aim-of-the-project)
 
  2. [Introduction](https://github.com/Reetika12795/RoboticProject_2022#introductionabout-tutbot3type-of-camera-usedrobot-modules)
 
  3. [prerequisites for the project](https://github.com/Reetika12795/RoboticProject_2022#prerequisites-for-the-project)
  
  4. [Base architecture of the model](https://github.com/Reetika12795/RoboticProject_2022#base-architecture-of-the-modelcamera-caliberation-module----intrinsic-and-extrinsicreason-set-hsv-value-for-detect-lane-call-control-lane-for-path-averaging)
-   1) **Extrinsic parameters**
-   2) **HSV space to detect lane**
-   3) **Control lane**
-   4) **Intrinsic parameters**
+      1) **Extrinsic parameters**
+      2) **HSV space to detect lane**
+      3) **Control lane**
+      4) **Intrinsic parameters**
    
  5. [Implementation of code and the steps to execute](https://github.com/Reetika12795/RoboticProject_2022#implementation-of-code-and-the-steps-to-execute)
+    * Launch the robot
+    * Intrinsic calibration
+    * Ectrinsic calibration
+    * Detecting the HSV lane from autorace
+    * Control node
 
-    * [Simulation to test the control system](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#control-system)
-
- 6. [Integration of ROS ](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#integration-of-ros)
-
-    1) [ What is ROS: ](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#1-what-is-ros)
-
-    2) [ What is the publisher and Subscriber](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#2-what-is-the-publisher-and-subscriber)
-
-    3) [Launch the Robot](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#3-launch-the-robot)
-
-    4) [Launch the Camera](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#4-launch-the-camera)
-
- 7. [Obstacle avoidance](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#obstacle-avoidance)
-
-    1) [Obstacle detection](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#1-obstacle-detection)
-
-    2) [The algorithm developed](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#2-the-algorithm-developed)
-
-    3) [Similar RRT algorithm](https://github.com/zainbinsumait/Multi_Sensor_Fusion_and_Tracking#3-similar-rrt-algorithm)
-
- 8. [Conclusion](https://github.com/Reetika12795/RoboticProject_2022#conclusion)
- 9. [Demo Video](https://github.com/Reetika12795/RoboticProject_2022#demo-video)
- 10. [References](https://github.com/Reetika12795/RoboticProject_2022#references-1)
+ 6. [Flochart of the architecture](https://github.com/Reetika12795/RoboticProject_2022#flochart-of-the-architecture)
+ 7. [Conclusion](https://github.com/Reetika12795/RoboticProject_2022#conclusion)
+ 8. [Demo Video](https://github.com/Reetika12795/RoboticProject_2022#demo-video)
+ 9. [References](https://github.com/Reetika12795/RoboticProject_2022#references-1)
 
 
 ## Aim of the project
@@ -121,23 +101,6 @@ P.S. - HSV values are sensitive to lighting conditions. But we have tried some i
 
 **Control lane** - The motive of the project is to move the turtlebot keeping it between the lines. After detection of the proper line on proper side, The robot should calculate he average of the lines and keep moving by following the average line. \In case of un availability of a line, as long as the other line is being detected, the robot should move in its desired path. To do that, the algorithm makes a line that should be the average line and creates a line by adding a distance from the detected line os that the bot can move swiftly.
 
-Camera calibration is one of the most important steps in order to run the turtle bot properly on the track. For camera calibration, we do two calibrations for intrinsic paramemters and extrinsic parameters. \
-
-**Intrinsic parameters** - Intrinsic parameters are the parameters for the optical centre and the focal length of the camera. 
-
-![image](https://user-images.githubusercontent.com/116564367/206685142-f2a86333-1945-40d2-8d00-081c301f2d23.png)
-
-
-A checker board pattern is used for the calibration of the intrinsic parameters.
-
-![alt text](https://github.com/Reetika12795/RoboticProject_2022/blob/main/images/camera-calibration_tb3.webp)
-
-**Extrinsic parameters** - Extrinsic parameters are the parameters for the surroundings of the camera relative to rotation and translation. It helps to view the world objects from camera perspective.\
-
-**HSV space to detect lane** - For detecting the lanes, HSV values have been used. The bot is detecting the yellow line on the left and white line on the right with the HSV values of yellow and white respectively detected by the realtime image received from the turtlebot camera. 
-P.S. - HSV values are sensitive to lighting conditions. But we have tried some image processing techniques to resolve it.
-
-**Control lane** - The motive of the project is to move the turtlebot keeping it between the lines. After detection of the proper line on proper side, The robot should calculate he average of the lines and keep moving by following the average line. \In case of un availability of a line, as long as the other line is being detected, the robot should move in its desired path. To do that, the algorithm makes a line that should be the average line and creates a line by adding a distance from the detected line os that the bot can move swiftly.
 
 ![merge_from_ofoct](https://user-images.githubusercontent.com/116564367/206718716-47df66f0-b7ba-44fc-8837-f028e299b077.png)
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (1) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (2) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (3) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (4)
@@ -151,12 +114,14 @@ Image(4) - Sometimes both the lines are detected on the lane but still the algor
 
 ## Implementation of code and the steps to execute
 
-### At very first we connect with Roscore to allow all the ROS nodes communications with each other.  
+#### Launch the robot
+
+* At very first we connect with Roscore to allow all the ROS nodes communications with each other.  
 launch roscore on the *Remote PC*.
 ```
 $ roscore
 ```
-### launch the turtlebot3 bringup in the Single Borad Computer(*SBC*) this strats the turtlebot3_core Node and starts publishing,subscribing the information between the SBC and sensor,actuators. 
+* launch the turtlebot3 bringup in the Single Borad Computer(*SBC*) this strats the turtlebot3_core Node and starts publishing,subscribing the information between the SBC and sensor,actuators. 
 ```
 $ roslaunch turtlebot3_bringup turtlebot3_robot.launch
 ```
@@ -167,11 +132,12 @@ run sudo apt install ros-<your_distro>-turtlebot3-bringup
 Then just source /opt and run the command.
 
 
-### From turtlebot3_autorace_camera launch raspberry pi camera *SBC*:
+* From turtlebot3_autorace_camera launch raspberry pi camera *SBC*:
 ```
 $ roslaunch turtlebot3_autorace_camera raspberry_pi_camera_publish.launch
 ```
-- ### Intrinsic Calibration
+
+#### Intrinsic Calibration
 
 Launch the intrinsic camera caliberation file on *Remote PC* to caliberate the rospicam instrinsics:
 ```
@@ -182,42 +148,46 @@ $ roslaunch turtlebot3_autorace_camera intrinsic_camera_calibration.launch mode:
 
 Once the image is in good contrast, sharper the parameter can be save in a **yaml** file to used in the next step and kill the node.
 
-- ### Extrinsic Caliberation which modifies the perspective of the image in the red trapezoid and helps in getting the ROI for out bot.
+#### Extrinsic Calibration
+- Extrinsic Calibration which modifies the perspective of the image in the red trapezoid and helps in getting the ROI for out bot.
 Run this node on the *Remote PC* in caliberation mode .
 ```
 $ roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch mode:=calibration
 $ rosrun rqt_reconfigure rqt_reconfigure
 ```
-Change the parameters of the file turtlebot3_autorace_2020/turtlebot3_autorace_camera/calibration/extrinsic_caliberation/projection.yaml
+* Change the parameters of the file turtlebot3_autorace_2020/turtlebot3_autorace_camera/calibration/extrinsic_caliberation/projection.yaml
 ![image](https://user-images.githubusercontent.com/33001160/206691770-4edff0c8-1e96-4ea9-97d5-eebfdef1c0da.png)
 
 
-Once the values are updated, Kill the node and launch it in action mode with the following command on the *Remote PC* 
+* Once the values are updated, Kill the node and launch it in action mode with the following command on the *Remote PC* 
 ```
 $ roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch mode:=action
 ```
+
 ### Detecting the HSV lane from autorace:
-Launch the following command to detect the HSV values of yellow and white for the projected image from the node /camera/image_projected_compensated
+* Launch the following command to detect the HSV values of yellow and white for the projected image from the node /camera/image_projected_compensated
 ```
 $ roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=calibration
 $ rosrun rqt_reconfigure rqt_reconfigure
 ```
-Open lane.yaml file located in turtlebot3_autorace_detect/param/lane/ and update the values where you can distinguish the yellow and white lane properly.\
-file:///home/masters/Pictures/Screenshot%20from%202022-11-14%2011-34-46.png![image](https://user-images.githubusercontent.com/33001160/206697797-39ef1844-9b3f-4a39-b8db-975a3edbe762.png)
+Open lane.yaml file located in turtlebot3_autorace_detect/param/lane/ and update the values where you can distinguish the yellow and white lane properly.
 
-<< attach photo of both the lanes like we are getting in our model >> \
-<< attach the values we set in lane.yaml for the hue values>> \
+![image](https://user-images.githubusercontent.com/33001160/206697797-39ef1844-9b3f-4a39-b8db-975a3edbe762.png)
+
+
 Once the values are updated, Kill the node and launch it in action mode with the following command on the *Remote PC* 
 ```
 $ roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=action
 ```
 
-### Since there exists ambiguity while distinguishing the yellow and white we try to equalize the intensity of the image received from autorace detect lane package.
+***Since there exists ambiguity while distinguishing the yellow and white we try to equalize the intensity of the image received from autorace detect lane package.***
 launch this file which subscribes to /camera/image_projected_compensated node and publish it's data on 'eql_img' node
 ```
 rosrun turtlebot3_autorace_camera hist_equalize.py
 ```
-###For the final step we launch the control node of the turtlebot that allows it to stay between the two detected lines :
+
+#### Control node
+* For the final step we launch the control node of the turtlebot that allows it to stay between the two detected lines :
 launch the command on your 'remote PC' 
 ```
 roslaunch turtlebot3_autorace_driving turtlebot3_autorace_control_lane.launch
@@ -229,6 +199,14 @@ Volla!! your robot will start to floow the path between the yellow and white lin
 ## Conclusion
 
 ## Demo Video:
+
+
+<!-- https://user-images.githubusercontent.com/116564367/206717401-5cf35e06-8680-4d73-9c17-cc9b7e7b7c8a.mp4 -->
+
+
+https://user-images.githubusercontent.com/116564367/206747824-566d8dd0-aebe-415f-8e7d-0e47473c8338.mp4
+
+
 https://www.youtube.com/watch?v=-YWwjlGPxko \
 https://youtu.be/e2C2EWr9nHM
 
