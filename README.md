@@ -39,10 +39,10 @@
  3. [prerequisites for the project](https://github.com/Reetika12795/RoboticProject_2022#prerequisites-for-the-project)
  
  4. [Base architecture of the model](https://github.com/Reetika12795/RoboticProject_2022#base-architecture-of-the-modelcamera-caliberation-module----intrinsic-and-extrinsicreason-set-hsv-value-for-detect-lane-call-control-lane-for-path-averaging)
-      1) **Extrinsic parameters**
-      2) **HSV space to detect lane**
-      3) **Control lane**
-      4) **Intrinsic parameters**
+      * Extrinsic parameters
+      * HSV space to detect lane
+      * Control lane
+      * Intrinsic parameters
    
  5. [Implementation of code and the steps to execute](https://github.com/Reetika12795/RoboticProject_2022#implementation-of-code-and-the-steps-to-execute)
     * Launch the robot
@@ -60,11 +60,11 @@
 
 ## AIM OF THE PROJECT:
 
-* The bot will follow the path with detecting yellow line on it's left and white line on it's right in particular using autorace package.
+* The turtlebot should follow the path by detecting yellow line on it's left and white line on it's right in particular using Autorace package.
 
-* The bot will follow the mean path between these two detected lines.
+* The turtlebot will follow the mean path between these two detected lines.
 
-* Even if it detects any one line with it's associated color the bot will behave normal.
+* Even when it detects any one of the lines with it's associated color the bot should follow the eman path.
 
 * The bot must be able to pass through the tunnel. 
 
@@ -113,13 +113,17 @@ P.S. - HSV values are sensitive to lighting conditions. But we have tried some i
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (1) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (2) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (3) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (4)
 
 
-Above in images,
-Image(1) - Both the lines left(yellow) and right(white) are visible and the average line(yellow in the middle) is created properly.\
-Image(2) - Left line is detected properly and right line is not in the view but still we have the average line.\
-Image(3) - Right line is detected properly and left line is not present in the view but the average line is being viewed properly.\
+**Above in the following images**
+
+Image(1) - Both the lines left(yellow) and right(white) are visible and the average line(yellow in the middle) is created properly.
+
+Image(2) - Left line is detected properly and right line is not in the view but still we have the average line. 
+
+Image(3) - Right line is detected properly and left line is not present in the view but the average line is being viewed properly.
+
 Image(4) - Sometimes both the lines are detected on the lane but still the algorithm gets confused for to the poor image reception due to lighting conditions.
 
-## Implementation of code and the steps to execute
+## IMPLEMENTATION OF THE CODE:
 
 #### Launch the robot
 
@@ -132,7 +136,9 @@ $ roscore
 ```
 $ roslaunch turtlebot3_bringup turtlebot3_robot.launch
 ```
-This package does not come directly with a ros install; you may have to install it yourself either via apt.
+
+This package does not come directly with a ros install, you might have to install it yourself either via apt.
+
 ```
 run sudo apt install ros-<your_distro>-turtlebot3-bringup
 ```
@@ -156,8 +162,10 @@ $ roslaunch turtlebot3_autorace_camera intrinsic_camera_calibration.launch mode:
 Once the image is in good contrast, sharper the parameter can be save in a **yaml** file to used in the next step and kill the node.
 
 #### Extrinsic Calibration
+
 - Extrinsic Calibration which modifies the perspective of the image in the red trapezoid and helps in getting the ROI for out bot.
 Run this node on the *Remote PC* in caliberation mode .
+
 ```
 $ roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch mode:=calibration
 $ rosrun rqt_reconfigure rqt_reconfigure
@@ -172,6 +180,7 @@ $ roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch mode:
 ```
 
 ### Detecting the HSV lane from autorace:
+
 * Launch the following command to detect the HSV values of yellow and white for the projected image from the node /camera/image_projected_compensated
 ```
 $ roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=calibration
@@ -194,6 +203,7 @@ rosrun turtlebot3_autorace_camera hist_equalize.py
 ```
 
 #### Control node
+
 * For the final step we launch the control node of the turtlebot that allows it to stay between the two detected lines :
 
 launch the command on your 'remote PC' 
@@ -202,14 +212,14 @@ roslaunch turtlebot3_autorace_driving turtlebot3_autorace_control_lane.launch
 ```
 Volla!! your robot will start to floow the path between the yellow and white lines
 
-## Flochart of the architecture
+## FLOWCHART OF THE ARCHITECTURE
 
-## Conclusion:
+## CONCLUSION:
 
 Moving a mobile robot autonomously is a difficult task especially if we are working with color based detection. To move a robot we first tried to understand the architechture of Robot operating system and how it communicates with each other through ROS messages and ROS topic/services.
 we use OpenCV bridge to preform some pre processing to autorace images and publish it as a topic list to ROS. histogram equalization to used to equalize the colourband of the detected lanes and this approach  helped  improve the detection of the lane to being able to move within the lane even in low lighing conditions inside the tunnel. 
 
-## Demo Video:
+## DEMO VIDEO:
 
 
 <!-- https://user-images.githubusercontent.com/116564367/206717401-5cf35e06-8680-4d73-9c17-cc9b7e7b7c8a.mp4 -->
@@ -218,15 +228,12 @@ we use OpenCV bridge to preform some pre processing to autorace images and publi
 https://user-images.githubusercontent.com/116564367/206747824-566d8dd0-aebe-415f-8e7d-0e47473c8338.mp4
 
 
-https://www.youtube.com/watch?v=-YWwjlGPxko \
-https://youtu.be/e2C2EWr9nHM
-
-## Challenges:
+## CHALLENGES:
 If the yellow line is detected as white line due to poor lightning conditions the bot will face problems while taking a turn.
 
 ![image](mages/challenges.png)
 
 
 
-## References:
+## REFERENCES:
 https://emanual.robotis.com/docs/en/platform/turtlebot3/autonomous_driving/
