@@ -231,7 +231,7 @@ https://user-images.githubusercontent.com/116564367/206747824-566d8dd0-aebe-415f
 ## CHALLENGES:
 If the yellow line is detected as white line due to poor lightning conditions the bot will face problems while taking a turn.
 
-![image](mages/challenges.png)
+![image](images/challenges.png)
 
 
 
