@@ -138,7 +138,12 @@ $ roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch mode:
 
 ## Flochart of the architecture
 ## Conclusion
+Moving a mobile robot autonomously is a difficult task. We have started with getting to know with turtlebot3 burger and being able to run with ROS packages. Python OpenCV package is used for the image processing part. We have used histogram equalization to equalize the colourband of the detected lanes. This technique has helped to improve the bot for being able to move within the lane even in low lighing conditions in tunnel. We have successfully implemented the method by creating ros packages for the python script of equalizing of histogram.
+
 ## References
+https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/
+http://wiki.ros.org/noetic
+ROS Basics course(https://app.theconstructsim.com/)
 
 
 ## Demo Video:
@@ -150,5 +155,4 @@ If the yellow line is detected as white line due to poor lightning conditions th
 ![alt text](https://github.com/Reetika12795/RoboticProject_2022/blob/main/Screenshot%20from%202022-11-14%2016-16-17.png)
 
 
-## References:
-https://emanual.robotis.com/docs/en/platform/turtlebot3/autonomous_driving/
+
