@@ -201,6 +201,7 @@ launch this file which subscribes to /camera/image_projected_compensated node an
 ```bash
 rosrun turtlebot3_autorace_detect hist_equalize.py
 ```
+If you are trying to run this file explicitely then make sure to catkin_make
 
 #### Control node
 
