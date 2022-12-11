@@ -53,8 +53,8 @@
 
  6. [Flochart of the architecture](https://github.com/Reetika12795/RoboticProject_2022#flochart-of-the-architecture)
  7. [Challenges](https://github.com/Reetika12795/RoboticProject_2022#challenges)
- 8. [Conclusion](https://github.com/Reetika12795/RoboticProject_2022#conclusion)
- 9. [Demo Video](https://github.com/Reetika12795/RoboticProject_2022#demo-video)
+ 8. [Demo Video](https://github.com/Reetika12795/RoboticProject_2022#demo-video)
+ 9. [Conclusion](https://github.com/Reetika12795/RoboticProject_2022#conclusion)
 10. [References](https://github.com/Reetika12795/RoboticProject_2022#references)
 
 
@@ -216,11 +216,7 @@ Volla!! your smart robot now should start to follow the path between the yellow 
 
 ![alt text](images/flowchart.jpg)
 
-## CONCLUSION:
 
-* Moving a mobile robot autonomously is a difficult task especially if we are working with color based detection. To move a robot we first tried to understand the architechture of Robot operating system and how it communicates with each other through ROS messages and ROS topic/services.
-
-* we use OpenCV bridge to preform some pre processing to autorace images and publish it as a topic list to ROS. histogram equalization to used to equalize the colourband of the detected lanes and this approach  helped  improve the detection of the lane to being able to move within the lane even in low lighing conditions inside the tunnel. 
 
 ## DEMO VIDEO:
 
@@ -229,6 +225,12 @@ Volla!! your smart robot now should start to follow the path between the yellow 
 
 
 https://user-images.githubusercontent.com/116564367/206747824-566d8dd0-aebe-415f-8e7d-0e47473c8338.mp4
+
+## CONCLUSION:
+
+* Moving a mobile robot autonomously is a difficult task especially if we are working with color based detection. To move a robot we first tried to understand the architechture of Robot operating system and how it communicates with each other through ROS messages and ROS topic/services.
+
+* we use OpenCV bridge to preform some pre processing to autorace images and publish it as a topic list to ROS. histogram equalization to used to equalize the colourband of the detected lanes and this approach  helped  improve the detection of the lane to being able to move within the lane even in low lighing conditions inside the tunnel. 
 
 
 ## CHALLENGES:
