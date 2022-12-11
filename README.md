@@ -210,14 +210,17 @@ launch the command on your 'remote PC'
 ```bash
 roslaunch turtlebot3_autorace_driving turtlebot3_autorace_control_lane.launch
 ```
-Volla!! your robot will start to floow the path between the yellow and white lines
+Volla!! your smart robot now should start to follow the path between the yellow and white lines.
 
 ## FLOWCHART OF THE ARCHITECTURE
 
+![alt text](images/flowchart.jpg)
+
 ## CONCLUSION:
 
-Moving a mobile robot autonomously is a difficult task especially if we are working with color based detection. To move a robot we first tried to understand the architechture of Robot operating system and how it communicates with each other through ROS messages and ROS topic/services.
-we use OpenCV bridge to preform some pre processing to autorace images and publish it as a topic list to ROS. histogram equalization to used to equalize the colourband of the detected lanes and this approach  helped  improve the detection of the lane to being able to move within the lane even in low lighing conditions inside the tunnel. 
+* Moving a mobile robot autonomously is a difficult task especially if we are working with color based detection. To move a robot we first tried to understand the architechture of Robot operating system and how it communicates with each other through ROS messages and ROS topic/services.
+
+* we use OpenCV bridge to preform some pre processing to autorace images and publish it as a topic list to ROS. histogram equalization to used to equalize the colourband of the detected lanes and this approach  helped  improve the detection of the lane to being able to move within the lane even in low lighing conditions inside the tunnel. 
 
 ## DEMO VIDEO:
 
