@@ -199,7 +199,7 @@ roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=action
 ***Since there exists ambiguity while distinguishing the yellow and white we try to equalize the intensity of the image received from autorace detect lane package.***
 launch this file which subscribes to /camera/image_projected_compensated node and publish it's data on 'eql_img' node
 ```bash
-rosrun turtlebot3_autorace_camera hist_equalize.py
+rosrun turtlebot3_autorace_detect hist_equalize.py
 ```
 
 #### Control node
