@@ -241,4 +241,7 @@ If the yellow line is detected as white line due to poor lightning conditions th
 
 
 ## REFERENCES:
-https://emanual.robotis.com/docs/en/platform/turtlebot3/autonomous_driving/
+https://emanual.robotis.com/docs/en/platform/turtlebot3/autonomous_driving/ \
+https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/. \
+http://wiki.ros.org/noetic. \
+ROS Basics course(https://app.theconstructsim.com/)
