@@ -205,9 +205,9 @@ If you are trying to run this file explicitely then make sure to catkin_make
 
 #### Control node
 
-* For the final step we launch the control node of the turtlebot that allows it to stay between the two detected lines :
+* For the final step we launch the control node of the turtlebot that allows it to stay between the two detected lines
 
-launch the command on your 'remote PC' 
+launch the command on your 'Remote PC' 
 ```bash
 roslaunch turtlebot3_autorace_driving turtlebot3_autorace_control_lane.launch
 ```
