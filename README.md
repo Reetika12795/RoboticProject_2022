@@ -36,7 +36,7 @@
 
  2. [Introduction](https://github.com/Reetika12795/RoboticProject_2022#introductionabout-tutbot3type-of-camera-usedrobot-modules)
 
- 3. [prerequisites for the project](https://github.com/Reetika12795/RoboticProject_2022#prerequisites-for-the-project)
+ 3. [Prerequisites for the project](https://github.com/Reetika12795/RoboticProject_2022#prerequisites-for-the-project)
  
  4. [Base architecture of the model](https://github.com/Reetika12795/RoboticProject_2022#base-architecture-of-the-modelcamera-caliberation-module----intrinsic-and-extrinsicreason-set-hsv-value-for-detect-lane-call-control-lane-for-path-averaging)
       * Extrinsic parameters
